@@ -47,6 +47,19 @@ This project is a Python-based GIF editor that provides various functionalities,
 
 3. The resulting GIF will be saved in the `results/combinedFrames/<gifname>.gif` file.
 
+## How to Use the Frame Offset Feature
+
+1. Place the GIF file you want to offset in the `inputs` folder.
+2. Run the following command in your terminal:
+
+   ```bash
+   python gifEditor.py offset_frames inputs/<your_gif_file_name>.gif <offset_percentage>
+   ```
+
+   Replace `<your_gif_file_name>` with the name of your GIF file and `<offset_percentage>` with the percentage of the width by which you want to offset the frames.
+
+3. The offset frames will be saved in the `results/offset_<your_gif_file_name>` folder.
+
 ## Example
 
 If you have a file named `example.gif` in the `inputs` folder, use the following command:

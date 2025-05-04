@@ -7,14 +7,14 @@
 - Implement GIF preview functionality.
 - Implement frame extraction functionality.
 - Implement frame conversion to GIF functionality.
+- Implement frame offset functionality (percentage-based).
 
 ## In Progress
 - Update PRD and TODO files
 
 ## Pending
-1. Implement frame offset functionality.
-2. Implement frame repetition functionality.
-3. Implement frame timing functionality.
-4. Test all features.
-5. Document the code and usage instructions.
-6. Finalize and commit the project.
+1. Implement frame repetition functionality.
+2. Implement frame timing functionality.
+3. Test all features.
+4. Document the code and usage instructions.
+5. Finalize and commit the project.

@@ -5,7 +5,7 @@ This project is a Python-based GIF editor that provides the following functional
 
 1. **Preview a GIF**: Display a given GIF file for preview.
 2. **Extract Frames**: Extract individual frames from a GIF file.
-3. **Offset Frames**: Offset each frame by a given pixel value, wrapping the image from right to left.
+3. **Offset Frames by Percentage**: Offset each frame of a GIF by a given percentage of its width, wrapping the image from right to left.
 4. **Increase Frames**: Extend the number of frames in a GIF by repeating the initial frames.
 5. **Set Frame Timing**: Specify the time interval between different frames in a GIF.
 
@@ -32,5 +32,9 @@ This project is a Python-based GIF editor that provides the following functional
 6. **Convert Frames to GIF**:
    - Combine individual frames from a folder (e.g., `inputs/frames_gifname`) into a single GIF file.
    - Save the resulting GIF in the `results/combinedFrames` folder with the name `gifname.gif`.
+
+7. **Offset Frames by Percentage**:
+   - Offset each frame of a GIF by a given percentage of its width, wrapping the image from right to left.
+   - Save the offset frames in a dedicated results folder.
 
 ---

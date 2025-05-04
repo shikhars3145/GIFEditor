@@ -3,6 +3,7 @@ import os
 from modules.preview.preview_main import preview_gif
 from modules.extract_frames.extract_main import extract_frames
 from modules.convert_to_gif.convert_main import convert_frames_to_gif
+from modules.frame_offset.offset_main import offset_frames
 
 def main():
     if len(sys.argv) < 3:
@@ -39,6 +40,15 @@ def main():
             output_file = os.path.join("results", "combinedFrames", f"{gif_name}.gif")
             os.makedirs(os.path.dirname(output_file), exist_ok=True)
             convert_frames_to_gif(frames_folder, output_file)
+    elif feature == "offset_frames":
+        if len(sys.argv) != 4:
+            print("Usage: python gifEditor.py offset_frames <path_to_gif> <offset_value>")
+        else:
+            gif_name = os.path.splitext(os.path.basename(sys.argv[2]))[0]
+            output_folder = os.path.join("results", f"offset_{gif_name}")
+            os.makedirs(output_folder, exist_ok=True)
+            offset_percentage = float(sys.argv[3])
+            offset_frames(sys.argv[2], output_folder, offset_percentage)
     else:
         print(f"Feature '{feature}' is not supported.")
 
