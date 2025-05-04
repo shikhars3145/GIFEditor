@@ -27,4 +27,10 @@ This project is a Python-based GIF editor that provides the following functional
 - A requirements file for package installation.
 - A Git repository with feature-based commits.
 
+## Updated Requirements
+
+6. **Convert Frames to GIF**:
+   - Combine individual frames from a folder (e.g., `inputs/frames_gifname`) into a single GIF file.
+   - Save the resulting GIF in the `results/combinedFrames` folder with the name `gifname.gif`.
+
 ---

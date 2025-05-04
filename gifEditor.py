@@ -2,6 +2,7 @@ import sys
 import os
 from modules.preview.preview_main import preview_gif
 from modules.extract_frames.extract_main import extract_frames
+from modules.convert_to_gif.convert_main import convert_frames_to_gif
 
 def main():
     if len(sys.argv) < 3:
@@ -29,6 +30,15 @@ def main():
             else:
                 os.makedirs(output_folder, exist_ok=True)
             extract_frames(sys.argv[2], output_folder)
+    elif feature == "convert_to_gif":
+        if len(sys.argv) != 3:
+            print("Usage: python gifEditor.py convert_to_gif <frames_folder>")
+        else:
+            frames_folder = sys.argv[2]
+            gif_name = os.path.basename(frames_folder).replace("frames_", "")
+            output_file = os.path.join("results", "combinedFrames", f"{gif_name}.gif")
+            os.makedirs(os.path.dirname(output_file), exist_ok=True)
+            convert_frames_to_gif(frames_folder, output_file)
     else:
         print(f"Feature '{feature}' is not supported.")
 
