@@ -8,6 +8,7 @@
 - Implement frame extraction functionality.
 - Implement frame conversion to GIF functionality.
 - Implement frame offset functionality (percentage-based).
+- Automatically convert offset frames to GIF.
 
 ## In Progress
 - Update PRD and TODO files

@@ -49,6 +49,8 @@ def main():
             os.makedirs(output_folder, exist_ok=True)
             offset_percentage = float(sys.argv[3])
             offset_frames(sys.argv[2], output_folder, offset_percentage)
+            output_gif = os.path.join("results", f"offset_{gif_name}.gif")
+            convert_frames_to_gif(output_folder, output_gif)
     else:
         print(f"Feature '{feature}' is not supported.")
 

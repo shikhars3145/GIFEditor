@@ -37,4 +37,8 @@ This project is a Python-based GIF editor that provides the following functional
    - Offset each frame of a GIF by a given percentage of its width, wrapping the image from right to left.
    - Save the offset frames in a dedicated results folder.
 
+8. **Convert Offset Frames to GIF**:
+   - Automatically convert offset frames into a GIF after applying the offset.
+   - Save the resulting GIF in the `results` folder with the name `offset_<gifname>.gif`.
+
 ---
