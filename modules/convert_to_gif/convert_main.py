@@ -2,6 +2,7 @@ from PIL import Image
 import os
 import re
 import json
+from modules.utils.common import numerical_sort
 
 def convert_frames_to_gif(input_folder, output_file):
     """Convert frames in a folder into a single GIF."""
@@ -11,11 +12,6 @@ def convert_frames_to_gif(input_folder, output_file):
         # Clear the output file if it already exists
         if os.path.exists(output_file):
             os.remove(output_file)
-
-        # Sort files numerically to handle frame_10, frame_2 correctly
-        def numerical_sort(value):
-            numbers = re.findall(r'\d+', value)
-            return int(numbers[0]) if numbers else 0
 
         for file_name in sorted(os.listdir(input_folder), key=numerical_sort):
             file_path = os.path.join(input_folder, file_name)

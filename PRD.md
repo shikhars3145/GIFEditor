@@ -59,4 +59,8 @@ This project is a Python-based GIF editor that provides the following functional
    - Use the saved durations when repeating frames and converting frames to GIF.
    - Ensure the final GIF reflects the correct timing for all frames.
 
+13. **Refactor Numerical Sort**:
+   - Move the `numerical_sort` function to a common utility module (`utils/common.py`).
+   - Ensure all modules use the common utility function for consistent sorting of filenames.
+
 ---

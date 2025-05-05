@@ -12,6 +12,12 @@ def remove_duplicate_frames(file_path, output_file):
             prev_frame = None
             while True:
                 current_frame = img.copy()
+                # Ensure frames have the same mode and size for comparison
+                current_frame = current_frame.convert("RGBA")
+                if prev_frame is not None:
+                    prev_frame = prev_frame.convert("RGBA")
+                    current_frame = current_frame.resize(prev_frame.size)
+
                 if prev_frame is None or not ImageChops.difference(prev_frame, current_frame).getbbox():
                     # If the frame is unique or the first frame
                     unique_frames.append(current_frame)

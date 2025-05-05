@@ -111,6 +111,25 @@ This project is a Python-based GIF editor that provides various functionalities,
 
      The final GIF will be saved in the `results/repeated_<your_gif_file_name>` folder.
 
+## How to Use the Workflow Feature
+
+1. Place the GIF file you want to process in the `inputs` folder.
+2. Run the following command in your terminal:
+
+   ```bash
+   python gifEditor.py workflow inputs/<your_gif_file_name>.gif
+   ```
+
+   Replace `<your_gif_file_name>` with the name of your GIF file.
+
+3. The workflow will:
+   - Remove duplicate frames from the GIF.
+   - Offset the frames by 25%.
+   - Repeat the frames until the total number of frames reaches 255.
+   - Generate the final GIF.
+
+4. The final GIF will be saved in the `results/workflow_<your_gif_file_name>` folder.
+
 ## Running Tests
 
 To run all tests, execute the following command in your terminal:
@@ -144,3 +163,8 @@ python gifEditor.py preview inputs/example.gif
 ```
 
 This will open and display the `example.gif` file.
+
+## Utilities
+
+### Numerical Sort
+The `numerical_sort` function is now part of the `utils/common.py` module. It is used across various modules to sort filenames numerically based on the numbers in the filenames. This ensures consistent ordering of frames during operations like repetition and conversion to GIF.

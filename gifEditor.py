@@ -69,6 +69,36 @@ def main():
             gif_name = os.path.splitext(os.path.basename(sys.argv[2]))[0]
             output_file = os.path.join("results", f"unique_{gif_name}.gif")
             remove_duplicate_frames(sys.argv[2], output_file)
+    elif feature == "workflow":
+        if len(sys.argv) != 3:
+            print("Usage: python gifEditor.py workflow <path_to_gif>")
+        else:
+            gif_name = os.path.splitext(os.path.basename(sys.argv[2]))[0]
+            output_folder = os.path.join("results", f"workflow_{gif_name}")
+            os.makedirs(output_folder, exist_ok=True)
+
+            # Step 1: Remove duplicates
+            unique_gif = os.path.join(output_folder, f"unique_{gif_name}.gif")
+            remove_duplicate_frames(sys.argv[2], unique_gif)
+
+            # Step 2: Offset frames by 25%
+            offset_folder = os.path.join(output_folder, "offset")
+            os.makedirs(offset_folder, exist_ok=True)
+            offset_frames(unique_gif, offset_folder, 25)
+            offset_gif = os.path.join(output_folder, f"offset_{gif_name}.gif")
+            convert_frames_to_gif(offset_folder, offset_gif)
+
+            # Step 3: Increase frames to 255
+            repeated_folder = os.path.join(output_folder, "repeated")
+            os.makedirs(repeated_folder, exist_ok=True)
+            repeat_frames(offset_gif, repeated_folder, 255)
+
+            # Step 4: Generate final GIF
+            final_gif = os.path.join(output_folder, f"final_{gif_name}.gif")
+            repeated_frames_folder = os.path.join(repeated_folder, "repeated_frames")
+            convert_frames_to_gif(repeated_frames_folder, final_gif)
+
+            print(f"Final GIF saved to {final_gif}")
     else:
         print(f"Feature '{feature}' is not supported.")
 

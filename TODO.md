@@ -11,6 +11,7 @@
 - Automatically convert offset frames to GIF.
 - Implement frame repetition functionality with limit.
 - Update logic to persist and use frame durations.
+- Refactor `numerical_sort` into a common utility module.
 
 ## In Progress
 - Update PRD and TODO files
