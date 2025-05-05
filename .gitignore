@@ -1,0 +1,21 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+venv/
+
+# Results and temporary files
+results/
+inputs/frames_*/
+inputs/*.gif
+
+# Test outputs
+tests/__pycache__/
+tests/test_repeated_bongocat/
+
+# System files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
