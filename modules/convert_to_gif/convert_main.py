@@ -22,7 +22,7 @@ def convert_frames_to_gif(input_folder, output_file):
                 frames.append(Image.open(file_path))
 
         if frames:
-            frames[0].save(output_file, save_all=True, append_images=frames[1:], loop=0)
+            frames[0].save(output_file, save_all=True, append_images=frames[1:], loop=0, optimize=False)
             print(f"GIF created at {output_file}")
         else:
             print("No valid image frames found in the input folder.")

@@ -4,6 +4,7 @@ from modules.preview.preview_main import preview_gif
 from modules.extract_frames.extract_main import extract_frames
 from modules.convert_to_gif.convert_main import convert_frames_to_gif
 from modules.frame_offset.offset_main import offset_frames
+from modules.frame_repetition.repeat_main import repeat_frames
 
 def main():
     if len(sys.argv) < 3:
@@ -51,6 +52,15 @@ def main():
             offset_frames(sys.argv[2], output_folder, offset_percentage)
             output_gif = os.path.join("results", f"offset_{gif_name}.gif")
             convert_frames_to_gif(output_folder, output_gif)
+    elif feature == "repeat_frames":
+        if len(sys.argv) != 4:
+            print("Usage: python gifEditor.py repeat_frames <path_to_gif> <repeat_count>")
+        else:
+            gif_name = os.path.splitext(os.path.basename(sys.argv[2]))[0]
+            output_folder = os.path.join("results", f"repeated_{gif_name}")
+            os.makedirs(output_folder, exist_ok=True)
+            repeat_count = int(sys.argv[3])
+            repeat_frames(sys.argv[2], output_folder, repeat_count)
     else:
         print(f"Feature '{feature}' is not supported.")
 

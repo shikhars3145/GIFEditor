@@ -60,6 +60,43 @@ This project is a Python-based GIF editor that provides various functionalities,
 
 3. The offset frames will be saved in the `results/offset_<your_gif_file_name>` folder.
 
+## How to Use the Frame Repetition Feature
+
+1. Place the GIF file you want to repeat frames for in the `inputs` folder.
+2. Run the following command in your terminal:
+
+   ```bash
+   python gifEditor.py repeat_frames inputs/<your_gif_file_name>.gif <limit>
+   ```
+
+   Replace `<your_gif_file_name>` with the name of your GIF file and `<limit>` with the maximum number of frames you want in the resulting GIF.
+
+3. The repeated GIF will be saved in the `results/repeated_<your_gif_file_name>` folder.
+
+## Running Tests
+
+To run all tests, execute the following command in your terminal:
+
+```bash
+python -m unittest discover -s tests -p "test_*.py"
+```
+
+This will discover and run all test files in the `tests` directory that match the pattern `test_*.py`.
+
+## Running Individual Tests
+
+To run a specific test file, use the following command:
+
+```bash
+python tests/<test_file_name>.py
+```
+
+Replace `<test_file_name>` with the name of the test file you want to run. For example, to run the test for the `repeat_frames` feature, use:
+
+```bash
+python tests/test_repeat_frames.py
+```
+
 ## Example
 
 If you have a file named `example.gif` in the `inputs` folder, use the following command:

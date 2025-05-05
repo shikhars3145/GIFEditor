@@ -41,4 +41,12 @@ This project is a Python-based GIF editor that provides the following functional
    - Automatically convert offset frames into a GIF after applying the offset.
    - Save the resulting GIF in the `results` folder with the name `offset_<gifname>.gif`.
 
+9. **Repeat Frames**:
+   - Repeat the frames of a GIF a specified number of times.
+   - Save the resulting GIF in the `results/repeated_<gifname>` folder.
+
+10. **Repeat Frames with Limit**:
+   - Generate repeated frames from a GIF up to a specified limit.
+   - Save the resulting GIF in the `results/repeated_<gifname>` folder.
+
 ---

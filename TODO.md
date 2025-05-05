@@ -9,13 +9,13 @@
 - Implement frame conversion to GIF functionality.
 - Implement frame offset functionality (percentage-based).
 - Automatically convert offset frames to GIF.
+- Implement frame repetition functionality with limit.
 
 ## In Progress
 - Update PRD and TODO files
 
 ## Pending
-1. Implement frame repetition functionality.
-2. Implement frame timing functionality.
-3. Test all features.
-4. Document the code and usage instructions.
-5. Finalize and commit the project.
+1. Implement frame timing functionality.
+2. Test all features.
+3. Document the code and usage instructions.
+4. Finalize and commit the project.
