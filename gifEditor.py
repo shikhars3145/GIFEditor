@@ -5,6 +5,7 @@ from modules.extract_frames.extract_main import extract_frames
 from modules.convert_to_gif.convert_main import convert_frames_to_gif
 from modules.frame_offset.offset_main import offset_frames
 from modules.frame_repetition.repeat_main import repeat_frames
+from modules.remove_duplicates.remove_duplicates_main import remove_duplicate_frames
 
 def main():
     if len(sys.argv) < 3:
@@ -61,6 +62,13 @@ def main():
             os.makedirs(output_folder, exist_ok=True)
             repeat_count = int(sys.argv[3])
             repeat_frames(sys.argv[2], output_folder, repeat_count)
+    elif feature == "remove_duplicates":
+        if len(sys.argv) != 3:
+            print("Usage: python gifEditor.py remove_duplicates <path_to_gif>")
+        else:
+            gif_name = os.path.splitext(os.path.basename(sys.argv[2]))[0]
+            output_file = os.path.join("results", f"unique_{gif_name}.gif")
+            remove_duplicate_frames(sys.argv[2], output_file)
     else:
         print(f"Feature '{feature}' is not supported.")
 

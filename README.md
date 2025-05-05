@@ -73,6 +73,44 @@ This project is a Python-based GIF editor that provides various functionalities,
 
 3. The repeated GIF will be saved in the `results/repeated_<your_gif_file_name>` folder.
 
+## Workflow for GIF Editing
+
+1. **Remove Duplicates**:
+   - Run the following command to remove duplicate frames from a GIF while preserving the total duration:
+
+     ```bash
+     python gifEditor.py remove_duplicates inputs/<your_gif_file_name>.gif
+     ```
+
+     The resulting GIF will be saved in the `results/unique_<your_gif_file_name>.gif` folder.
+
+2. **Convert to Frames**:
+   - Extract frames from the resulting GIF and save their durations:
+
+     ```bash
+     python gifEditor.py extract_frames results/unique_<your_gif_file_name>.gif
+     ```
+
+     Frames and their durations will be saved in the `results/unique_<your_gif_file_name>` folder.
+
+3. **Repeat Frames**:
+   - Repeat frames up to a specified limit:
+
+     ```bash
+     python gifEditor.py repeat_frames results/unique_<your_gif_file_name>.gif <limit>
+     ```
+
+     The repeated frames and updated durations will be saved in the `results/repeated_<your_gif_file_name>` folder.
+
+4. **Convert Frames to GIF**:
+   - Combine the repeated frames into a single GIF:
+
+     ```bash
+     python gifEditor.py convert_to_gif results/repeated_<your_gif_file_name>/repeated_frames
+     ```
+
+     The final GIF will be saved in the `results/repeated_<your_gif_file_name>` folder.
+
 ## Running Tests
 
 To run all tests, execute the following command in your terminal:

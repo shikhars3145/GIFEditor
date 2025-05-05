@@ -1,6 +1,7 @@
 from PIL import Image
 import os
 import re
+import json
 
 def convert_frames_to_gif(input_folder, output_file):
     """Convert frames in a folder into a single GIF."""
@@ -22,7 +23,13 @@ def convert_frames_to_gif(input_folder, output_file):
                 frames.append(Image.open(file_path))
 
         if frames:
-            frames[0].save(output_file, save_all=True, append_images=frames[1:], loop=0, optimize=False)
+            # Load frame durations
+            durations_file = os.path.join(input_folder, "durations.json")
+            with open(durations_file, "r") as f:
+                durations = json.load(f)
+
+            # Save the frames as a new GIF with durations
+            frames[0].save(output_file, save_all=True, append_images=frames[1:], loop=0, duration=durations)
             print(f"GIF created at {output_file}")
         else:
             print("No valid image frames found in the input folder.")

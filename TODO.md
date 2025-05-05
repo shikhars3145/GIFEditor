@@ -10,6 +10,7 @@
 - Implement frame offset functionality (percentage-based).
 - Automatically convert offset frames to GIF.
 - Implement frame repetition functionality with limit.
+- Update logic to persist and use frame durations.
 
 ## In Progress
 - Update PRD and TODO files

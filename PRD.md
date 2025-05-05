@@ -49,4 +49,14 @@ This project is a Python-based GIF editor that provides the following functional
    - Generate repeated frames from a GIF up to a specified limit.
    - Save the resulting GIF in the `results/repeated_<gifname>` folder.
 
+11. **Remove Duplicate Frames**:
+   - Remove duplicate frames from a GIF while preserving the total duration.
+   - Combine the duration of duplicate frames into the first occurrence of the frame.
+   - Save the resulting GIF in the `results/unique_<gifname>.gif` folder.
+
+12. **Persist and Use Frame Durations**:
+   - Save the duration of each frame during extraction.
+   - Use the saved durations when repeating frames and converting frames to GIF.
+   - Ensure the final GIF reflects the correct timing for all frames.
+
 ---
